@@ -15,8 +15,6 @@ RUN mkdir /dv-runtime && \
     
 RUN git clone https://gitlab.com/inivation/dv/dv-runtime.git && \
     cd dv-runtime && \
+    cmake -DCMAKE_INSTALL_PREFIX=/usr DVR_ENABLE_PROFILER=ON . && \
     make && \
     make install
-     
-
-RUN cmake -DCMAKE_INSTALL_PREFIX=/usr DVR_ENABLE_PROFILER=ON .
