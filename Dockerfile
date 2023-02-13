@@ -8,13 +8,13 @@ RUN apt update && \
     add-apt-repository ppa:inivation-ppa/inivation
 
 RUN apt update && \
-    apt-get install -y git dv-processing build-essential cmake pkg-config libboost-all-dev libssl-dev libopencv-dev libopencv-contrib-dev liblz4-dev libzstd-dev libfmt-dev libcaer-dev
+    apt-get install -y git dv-processing dv-runtime build-essential cmake pkg-config libboost-all-dev libssl-dev libopencv-dev libopencv-contrib-dev liblz4-dev libzstd-dev libfmt-dev libcaer-dev
 
-RUN mkdir /dv-runtime && \
-    cd /dv-runtime
+#RUN mkdir /dv-runtime && \
+#    cd /dv-runtime
     
-RUN git clone https://gitlab.com/inivation/dv/dv-runtime.git && \
-    cd dv-runtime && \
-    cmake -DCMAKE_INSTALL_PREFIX=/usr DVR_ENABLE_PROFILER=ON . && \
-    make && \
-    make install
+#RUN git clone https://gitlab.com/inivation/dv/dv-runtime.git && \
+#    cd dv-runtime && \
+#    cmake -DCMAKE_INSTALL_PREFIX=/usr DVR_ENABLE_PROFILER=ON . && \
+#    make && \
+#    make install
