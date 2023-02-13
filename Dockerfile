@@ -1,4 +1,8 @@
 from ubuntu:latest
+
+ENV TZ=Europe/Oslo
+RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
+
 RUN apt update && \
     apt install -y software-properties-common && \
     add-apt-repository ppa:inivation-ppa/inivation
